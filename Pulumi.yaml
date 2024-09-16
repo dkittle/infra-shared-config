@@ -1,0 +1,82 @@
+name: infra-shared-config
+runtime: yaml
+description: A source of all parameters used to configure applications
+
+variables:
+  stackName: ${pulumi.stack}
+
+# The values we're reading from stack configuration.
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-yaml
+
+# The AWS SSM Parameters managed by this stack.
+resources:
+  mongodb_host_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/mongodb/host
+      value: ${mongodb_host}
+      type: String
+  mongodb_username_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/mongodb/username
+      value: ${mongodb_username}
+      type: String
+  mongodb_password_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/mongodb/password
+      value: ${mongodb_password}
+      type: SecureString
+  mongodb_truststore_password_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/mongodb/truststore_password
+      value: ${mongodb_truststore_password}
+      type: SecureString
+  dmseer_admin_username_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/dmseer/admin_username
+      value: ${dmseer_admin_username}
+      type: String
+  dmseer_admin_password_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/dmseer/admin_password
+      value: ${dmseer_admin_password}
+      type: SecureString
+  dmseer_jwt_secret_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/dmseer/jwt_secret
+      value: ${dmseer_jwt_secret}
+      type: SecureString
+  dmseer_postman_apikey_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/dmseer/postman_apikey
+      value: ${dmseer_postman_apikey}
+      type: SecureString
+  dmseer_discord_bot_token_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/dmseer/discord_bot_token
+      value: ${dmseer_discord_bot_token}
+      type: SecureString
+
+# Outputs are the fully-qualified AWS SSM Parameter names
+# that consuming stacks can use to retrieve associated values.
+outputs:
+  mongodb_host_param_name: ${mongodb_host_param.name}
+  mongodb_username_param_name: ${mongodb_username_param.name}
+  mongodb_password_param_name: ${mongodb_password_param.name}
+  mongodb_truststore_password_param_name: ${mongodb_truststore_password_param.name}
+  dmseer_admin_username_param_name: ${dmseer_admin_username_param.name}
+  dmseer_admin_password_param_name: ${dmseer_admin_password_param.name}
+  dmseer_jwt_secret_param_name: ${dmseer_jwt_secret_param.name}
+  dmseer_postman_apikey_param_name: ${dmseer_postman_apikey_param.name}
+  dmseer_discord_bot_token_param_name: ${dmseer_discord_bot_token_param.name}
