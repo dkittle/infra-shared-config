@@ -12,5 +12,5 @@ config:
   infra-shared-config:mongodb_password:
     secure: AAABALI03iO9wsSWUDAJyZsNKlwzJC24p6jiOaOMzstsL859tKwsUqvp
   infra-shared-config:mongodb_truststore_password:
-    secure: AAABAAaflqf8hrJYDSCYpakOtikL5VS+CXRos0ixXrkOmAx4nmX11rD9Mw8pvlhEGA==
+    secure: AAABANzKiUIzebP26jQlGxZz4F5TjZ26IYK5H1AOaN7d42LR+OQ1Fg==
   infra-shared-config:mongodb_username: qndadmin
