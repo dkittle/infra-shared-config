@@ -67,6 +67,25 @@ resources:
       name: /shared-config/${stackName}/dmseer/discord_bot_token
       value: ${dmseer_discord_bot_token}
       type: SecureString
+  # dmseer_uploaded_files_param:
+  #   type: aws:ssm:Parameter
+  #   properties:
+  #     name: /shared-config/${stackName}/dmseer/uploaded_files
+  #     value: ${dmseer_uploaded_files}
+  #     type: String
+  # aws_region_param:
+  #   type: aws:ssm:Parameter
+  #   properties:
+  #     name: /shared-config/${stackName}/aws/region
+  #     value: ${aws_region}
+  #     type: String
+  # aws_user_files_bucket_param:
+  #   type: aws:ssm:Parameter
+  #   properties:
+  #     name: /shared-config/${stackName}/aws/user_files_bucket
+  #     value: ${aws_user_files_bucket}
+  #     type: String
+
 
 # Outputs are the fully-qualified AWS SSM Parameter names
 # that consuming stacks can use to retrieve associated values.
@@ -80,3 +99,6 @@ outputs:
   dmseer_jwt_secret_param_name: ${dmseer_jwt_secret_param.name}
   dmseer_postman_apikey_param_name: ${dmseer_postman_apikey_param.name}
   dmseer_discord_bot_token_param_name: ${dmseer_discord_bot_token_param.name}
+  # dmseer_uploaded_files_param_name: ${dmseer_uploaded_files_param.name}
+  # aws_region_param_name: ${aws_region_param.name}
+  # aws_user_files_bucket_param_name: ${aws_user_files_bucket_param.name}

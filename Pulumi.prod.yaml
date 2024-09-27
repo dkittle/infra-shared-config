@@ -1,5 +1,8 @@
 config:
   aws:region: ca-central-1
+  aws:profile: pulumiprod
+  infra-shared-config:aws_region: ca-central-1
+  infra-shared-config:aws_user_files_bucket: "unknown"
   infra-shared-config:dmseer_admin_password: ""
   infra-shared-config:dmseer_admin_username: DonDaDM
   infra-shared-config:dmseer_discord_bot_token:
@@ -8,6 +11,7 @@ config:
     secure: AAABAFAcExHU17apSb5UrxEzA/UMJCFNW7SxmhqFTjn76pJ7bBkQjpCmmiMuMj3p6j+a
   infra-shared-config:dmseer_postman_apikey:
     secure: AAABAIKftHnwh2CuhiKueS9XzRSBEzo5RV3BQB4CjSPxlIA3tvKIivBmE9Y9av1StIxWGFDuH2Ooy72NRL1dalu8TOY=
+  infra-shared-config:dmseer_uploaded_files: aws
   infra-shared-config:mongodb_host: prod-dmseer-mongo-cluster-34654da.cluster-chl5mocqeboi.ca-central-1.docdb.amazonaws.com:27017/?tls=true&replicaSet=rs0&retryWrites=false
   infra-shared-config:mongodb_password:
     secure: AAABALI03iO9wsSWUDAJyZsNKlwzJC24p6jiOaOMzstsL859tKwsUqvp
