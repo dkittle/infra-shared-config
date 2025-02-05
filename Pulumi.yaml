@@ -13,92 +13,117 @@ config:
 
 # The AWS SSM Parameters managed by this stack.
 resources:
-  mongodb_host_param:
+  postgres_host_param:
     type: aws:ssm:Parameter
     properties:
-      name: /shared-config/${stackName}/mongodb/host
-      value: ${mongodb_host}
+      name: /shared-config/${stackName}/postgres/host
+      value: ${postgres_host}
+      overwrite: true
       type: String
-  mongodb_username_param:
+  postgres_username_param:
     type: aws:ssm:Parameter
     properties:
-      name: /shared-config/${stackName}/mongodb/username
-      value: ${mongodb_username}
+      name: /shared-config/${stackName}/postgres/username
+      value: ${postgres_username}
+      overwrite: true
       type: String
-  mongodb_password_param:
+  postgres_password_param:
     type: aws:ssm:Parameter
     properties:
-      name: /shared-config/${stackName}/mongodb/password
-      value: ${mongodb_password}
+      name: /shared-config/${stackName}/postgres/password
+      value: ${postgres_password}
+      overwrite: true
       type: SecureString
-  mongodb_truststore_password_param:
+  postgres_dmseer_username_param:
     type: aws:ssm:Parameter
     properties:
-      name: /shared-config/${stackName}/mongodb/truststore_password
-      value: ${mongodb_truststore_password}
+      name: /shared-config/${stackName}/postgres/dmseer/user/username
+      value: ${postgres_dmseer_user_username}
+      overwrite: true
+      type: String
+  postgres_dmseer_password_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/postgres/dmseer/user/password
+      value: ${postgres_dmseer_user_password}
+      overwrite: true
       type: SecureString
+#  mongodb_truststore_password_param:
+#    type: aws:ssm:Parameter
+#    properties:
+#      name: /shared-config/${stackName}/mongodb/truststore_password
+#      value: ${mongodb_truststore_password}
+#      type: SecureString
   dmseer_admin_username_param:
     type: aws:ssm:Parameter
     properties:
       name: /shared-config/${stackName}/dmseer/admin_username
       value: ${dmseer_admin_username}
+      overwrite: true
       type: String
   dmseer_admin_password_param:
     type: aws:ssm:Parameter
     properties:
       name: /shared-config/${stackName}/dmseer/admin_password
       value: ${dmseer_admin_password}
+      overwrite: true
       type: SecureString
   dmseer_jwt_secret_param:
     type: aws:ssm:Parameter
     properties:
       name: /shared-config/${stackName}/dmseer/jwt_secret
       value: ${dmseer_jwt_secret}
+      overwrite: true
       type: SecureString
   dmseer_postman_apikey_param:
     type: aws:ssm:Parameter
     properties:
       name: /shared-config/${stackName}/dmseer/postman_apikey
       value: ${dmseer_postman_apikey}
+      overwrite: true
       type: SecureString
   dmseer_discord_bot_token_param:
     type: aws:ssm:Parameter
     properties:
       name: /shared-config/${stackName}/dmseer/discord_bot_token
       value: ${dmseer_discord_bot_token}
+      overwrite: true
       type: SecureString
-  # dmseer_uploaded_files_param:
-  #   type: aws:ssm:Parameter
-  #   properties:
-  #     name: /shared-config/${stackName}/dmseer/uploaded_files
-  #     value: ${dmseer_uploaded_files}
-  #     type: String
-  # aws_region_param:
-  #   type: aws:ssm:Parameter
-  #   properties:
-  #     name: /shared-config/${stackName}/aws/region
-  #     value: ${aws_region}
-  #     type: String
-  # aws_user_files_bucket_param:
-  #   type: aws:ssm:Parameter
-  #   properties:
-  #     name: /shared-config/${stackName}/aws/user_files_bucket
-  #     value: ${aws_user_files_bucket}
-  #     type: String
+  dmseer_uploaded_files_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/dmseer/uploaded_files
+      value: ${dmseer_uploaded_files}
+      overwrite: true
+      type: String
+  aws_region_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/aws/region
+      value: ${aws_region}
+      overwrite: true
+      type: String
+  aws_user_files_bucket_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/aws/user_files_bucket
+      overwrite: true
+      value: ${aws_user_files_bucket}
+      type: String
 
 
 # Outputs are the fully-qualified AWS SSM Parameter names
 # that consuming stacks can use to retrieve associated values.
 outputs:
-  mongodb_host_param_name: ${mongodb_host_param.name}
-  mongodb_username_param_name: ${mongodb_username_param.name}
-  mongodb_password_param_name: ${mongodb_password_param.name}
-  mongodb_truststore_password_param_name: ${mongodb_truststore_password_param.name}
+  postgres_host_param_name: ${postgres_host_param.name}
+  postgres_username_param_name: ${postgres_username_param.name}
+  postgres_password_param_name: ${postgres_password_param.name}
+#  mongodb_truststore_password_param_name: ${mongodb_truststore_password_param.name}
   dmseer_admin_username_param_name: ${dmseer_admin_username_param.name}
   dmseer_admin_password_param_name: ${dmseer_admin_password_param.name}
   dmseer_jwt_secret_param_name: ${dmseer_jwt_secret_param.name}
   dmseer_postman_apikey_param_name: ${dmseer_postman_apikey_param.name}
   dmseer_discord_bot_token_param_name: ${dmseer_discord_bot_token_param.name}
-  # dmseer_uploaded_files_param_name: ${dmseer_uploaded_files_param.name}
-  # aws_region_param_name: ${aws_region_param.name}
-  # aws_user_files_bucket_param_name: ${aws_user_files_bucket_param.name}
+  dmseer_uploaded_files_param_name: ${dmseer_uploaded_files_param.name}
+  aws_region_param_name: ${aws_region_param.name}
+  aws_user_files_bucket_param_name: ${aws_user_files_bucket_param.name}

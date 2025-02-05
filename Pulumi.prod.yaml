@@ -3,18 +3,21 @@ config:
   aws:profile: pulumiprod
   infra-shared-config:aws_region: ca-central-1
   infra-shared-config:aws_user_files_bucket: "unknown"
-  infra-shared-config:dmseer_admin_password: ""
-  infra-shared-config:dmseer_admin_username: DonDaDM
   infra-shared-config:dmseer_discord_bot_token:
-    secure: AAABAKMqiEDc+fSBEBSlCeo+5GE7jVx0yjxVr5eqAOIGp7HBCljXLD8sKHuGwUhA5VgER08hhtatQsBLlRTTozJjtNRpBoG6RQ1LuAv9HDgxIgdl8/KvGbg0/+1IBgCy//AsknDR4Ws=
-  infra-shared-config:dmseer_jwt_secret:
-    secure: AAABAFAcExHU17apSb5UrxEzA/UMJCFNW7SxmhqFTjn76pJ7bBkQjpCmmiMuMj3p6j+a
-  infra-shared-config:dmseer_postman_apikey:
-    secure: AAABAIKftHnwh2CuhiKueS9XzRSBEzo5RV3BQB4CjSPxlIA3tvKIivBmE9Y9av1StIxWGFDuH2Ooy72NRL1dalu8TOY=
+    secure: v1:AlzUh3TRS/R/DJKY:P/caaa+Nj68+1ITkHNMYinolmlxnBYovFMl5bKXao3WHwljNfkjk5GuIVGUWnO591Mq0xT/nFogaw+I7+pdkcwwFGEFxODQumByxorXqusATPsD4tg/NWg==
   infra-shared-config:dmseer_uploaded_files: aws
-  infra-shared-config:mongodb_host: prod-dmseer-mongo-cluster-34654da.cluster-chl5mocqeboi.ca-central-1.docdb.amazonaws.com:27017/?tls=true&replicaSet=rs0&retryWrites=false
-  infra-shared-config:mongodb_password:
-    secure: AAABALI03iO9wsSWUDAJyZsNKlwzJC24p6jiOaOMzstsL859tKwsUqvp
-  infra-shared-config:mongodb_truststore_password:
-    secure: AAABANzKiUIzebP26jQlGxZz4F5TjZ26IYK5H1AOaN7d42LR+OQ1Fg==
-  infra-shared-config:mongodb_username: qndadmin
+  infra-shared-config:postgres_password:
+    secure: v1:2U0XZDU0B8DAfr9P:XupHBviPqEqdvO7dtVvkR5daOGS60dVFVWYYYstK57baGhR7
+  infra-shared-config:dmseer_postman_apikey:
+    secure: v1:vTcHxV9ywRAdNmeH:YnH3IM2FUeaSJvX9VCT3PNtJcX7Jzh1JJU/x6coPU/9seNFJgy/tYHN5xnSezlymkE4s0w==
+  infra-shared-config:dmseer_jwt_secret:
+    secure: v1:yYJrShAomnLr1fuS:YK+v8zd9jmXMS8jDwwH9HGLbzvJ+sXYX366WqeigU554PgkHZpz5Vk+PO8B+Dg/Pv2RDwuN8Es9u
+  infra-shared-config:dmseer_admin_username: Storyteller
+  infra-shared-config:dmseer_admin_password:
+    secure: v1:F8nn6nCf0gVhYrQC:czAgO5/4V3tLsMI1Pku09+18aI76un56z4sw4SVPa1XNzUvl
+  infra-shared-config:postgres_host: "dmseer-postgres-db.chl5mocqeboi.ca-central-1.rds.amazonaws.com"
+  infra-shared-config:postgres_username: postgres
+  infra-shared-config:postgres_dmseer_user_username: dmseeruser
+  infra-shared-config:postgres_dmseer_user_password:
+    secure: v1:hwxSxe7wSWKuaVri:lmYK2XWOFaEqdI5Dr8NMAmIaWlmM7Yb/jNFwFHXt6oy/JIqcKQ==
+encryptionsalt: v1:gfGuVXm0QAA=:v1:hBORBu0VneqI/+Ad:7SabevtXf6ljW91CeXZDwyM4kNkgog==
