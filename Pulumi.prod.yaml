@@ -20,4 +20,5 @@ config:
   infra-shared-config:postgres_dmseer_user_username: dmseeruser
   infra-shared-config:postgres_dmseer_user_password:
     secure: v1:hwxSxe7wSWKuaVri:lmYK2XWOFaEqdI5Dr8NMAmIaWlmM7Yb/jNFwFHXt6oy/JIqcKQ==
+  infra-shared-config:dmseer_discord_redirect_uri: https://api.quillndice.com/login/discord/callback
 encryptionsalt: v1:gfGuVXm0QAA=:v1:hBORBu0VneqI/+Ad:7SabevtXf6ljW91CeXZDwyM4kNkgog==

@@ -89,6 +89,13 @@ resources:
       value: ${dmseer_discord_bot_token}
       overwrite: true
       type: SecureString
+  dmseer_discord_redirect_uri_param:
+    type: aws:ssm:Parameter
+    properties:
+      name: /shared-config/${stackName}/dmseer/discord_redirect_uri
+      value: ${dmseer_discord_redirect_uri}
+      overwrite: true
+      type: String
   dmseer_uploaded_files_param:
     type: aws:ssm:Parameter
     properties:
